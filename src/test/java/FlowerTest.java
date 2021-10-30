@@ -41,12 +41,4 @@ class FlowerTest {
         flower.setType(FlowerType.TULIP);
         assertEquals(FlowerType.TULIP, flower.getType());
     }
-
-    @Test
-    void testToString() {
-        assertEquals("flower.Flower(price=10.0, sepalLength=2.5, color=RED, type=ROSE)", flower.toString());
-        flower.setColor(FlowerColor.PINK);
-        flower.setPrice(8.7);
-        assertEquals("flower.Flower(price=8.7, sepalLength=2.5, color=PINK, type=ROSE)", flower.toString());
-    }
 }

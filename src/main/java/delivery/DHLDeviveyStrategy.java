@@ -7,8 +7,10 @@ import java.util.LinkedList;
 public class DHLDeviveyStrategy implements Delivery{
     @Override
     public boolean deliver(LinkedList<Item> items) {
-        String stringItems = items.toString();
-        System.out.println("Deliver by DHL: " + stringItems.substring(1, stringItems.length()-1));
+        System.out.println("Deliver by DHL:");
+        for (Item deliver_item : items) {
+            System.out.println("- " + deliver_item);
+        }
         return true;
     }
 }

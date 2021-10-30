@@ -2,10 +2,12 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
+import java.util.Locale;
+
 /**
  * Represent a pack of some similar flowers
  */
-@Getter @Setter @ToString
+@Getter @Setter
 public class FlowerPack {
     private Flower flower;
     private int amount;
@@ -31,5 +33,11 @@ public class FlowerPack {
     public void setAmount(int amount) {
         assert (amount > 0);
         this.amount = amount;
+    }
+
+    @Override
+    public String toString() {
+        String str =  amount + " " + getColor() + " " + getType() + "s";
+        return str.toLowerCase(Locale.ROOT);
     }
 }

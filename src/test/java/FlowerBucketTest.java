@@ -38,9 +38,9 @@ class FlowerBucketTest {
 
     @Test
     void getPrice() {
-        assertEquals(180, bucket.getPrice());
+        assertEquals(180, bucket.price());
         bucket.addFlowerPack(chamomile_pack);
-        assertEquals(280, bucket.getPrice());
+        assertEquals(280, bucket.price());
     }
 
     @Test

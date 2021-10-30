@@ -1,19 +1,19 @@
 import lombok.Getter;
 
-import java.util.ArrayList;
 import java.util.HashSet;
 
 /**
  * Represent a bucket of flowers
  */
 @Getter
-public class FlowerBucket {
+public class FlowerBucket extends Item{
     private HashSet<FlowerPack> flowerPacks;
 
     /**
      * Create new empty bucket
      */
     public FlowerBucket() {
+        super();
         this.flowerPacks = new HashSet<>();
     }
 
@@ -23,9 +23,11 @@ public class FlowerBucket {
      */
     public void addFlowerPack(FlowerPack pack){
         flowerPacks.add(pack);
+        updateDescription();
     }
 
-    public double getPrice(){
+    @Override
+    public double price(){
         double price = 0.0;
         for (FlowerPack pack : flowerPacks) {
             price += pack.getPrice();
@@ -56,7 +58,7 @@ public class FlowerBucket {
      * @return true is satisfies criteria, false otherwise
      */
     public boolean checkPrice(double minPrice, double maxPrice) {
-        double price = getPrice();
+        double price = price();
         return minPrice <= price && price <= maxPrice;
     }
 
@@ -96,4 +98,17 @@ public class FlowerBucket {
         return true;
     }
 
+
+    @Override
+    public String toString() {
+        String description = "Bucket: ";
+        if (flowerPacks == null || flowerPacks.isEmpty()){
+            description += "no flowers";
+        } else{
+            String packs = getFlowerPacks().toString();
+            packs = packs.substring(1, packs.length()-1);
+            description += packs;
+        }
+        return description;
+    }
 }

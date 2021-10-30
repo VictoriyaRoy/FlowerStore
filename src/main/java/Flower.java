@@ -2,11 +2,13 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
+import java.util.Locale;
+
 /**
  * Represent a flower
  */
-@Getter @Setter @ToString
-public class Flower {
+@Getter @Setter
+public class Flower extends Item{
     private double price, sepalLength;
     private FlowerColor color;
     private FlowerType type;
@@ -24,9 +26,19 @@ public class Flower {
         this.price = price;
     }
 
+    @Override
+    public double price() {
+        return price;
+    }
+
     public void setSepalLength(double sepalLength) {
         assert (sepalLength > 0);
         this.sepalLength = sepalLength;
     }
 
+    @Override
+    public String toString() {
+        String description = color + " " + type + " with sepal length " + sepalLength;
+        return "Flower: " + description.toLowerCase(Locale.ROOT);
+    }
 }

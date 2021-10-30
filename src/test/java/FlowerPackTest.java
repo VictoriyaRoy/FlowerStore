@@ -1,4 +1,7 @@
-import org.junit.jupiter.api.Assertions;
+import flower.Flower;
+import flower.FlowerColor;
+import flower.FlowerPack;
+import flower.FlowerType;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

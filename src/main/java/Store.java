@@ -1,3 +1,6 @@
+import flower.FlowerBucket;
+import flower.FlowerColor;
+import flower.FlowerType;
 import lombok.Getter;
 import lombok.Setter;
 

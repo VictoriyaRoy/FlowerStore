@@ -1,3 +1,6 @@
+import flower.Flower;
+import flower.FlowerColor;
+import flower.FlowerType;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -41,9 +44,9 @@ class FlowerTest {
 
     @Test
     void testToString() {
-        assertEquals("Flower(price=10.0, sepalLength=2.5, color=RED, type=ROSE)", flower.toString());
+        assertEquals("flower.Flower(price=10.0, sepalLength=2.5, color=RED, type=ROSE)", flower.toString());
         flower.setColor(FlowerColor.PINK);
         flower.setPrice(8.7);
-        assertEquals("Flower(price=8.7, sepalLength=2.5, color=PINK, type=ROSE)", flower.toString());
+        assertEquals("flower.Flower(price=8.7, sepalLength=2.5, color=PINK, type=ROSE)", flower.toString());
     }
 }

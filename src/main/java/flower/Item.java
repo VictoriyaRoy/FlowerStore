@@ -1,3 +1,5 @@
+package flower;
+
 public abstract class Item {
     String description;
 

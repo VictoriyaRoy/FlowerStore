@@ -40,6 +40,6 @@ public class Flower extends Item{
     @Override
     public String toString() {
         String description = color + " " + type + " with sepal length " + sepalLength;
-        return "Flower: " + description.toLowerCase(Locale.ROOT);
+        return "Flower(" + description.toLowerCase(Locale.ROOT) + ")";
     }
 }

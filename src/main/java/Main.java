@@ -1,4 +1,7 @@
+import delivery.PostDeliveryStrategy;
 import flower.*;
+
+import java.util.LinkedList;
 
 public class Main {
     public static void main(String[] args) {
@@ -13,9 +16,13 @@ public class Main {
         Flower tulip = new Flower(2.5, FlowerColor.PINK, 12.0, FlowerType.TULIP);
         FlowerPack tulip_pack = new FlowerPack(tulip, 7);
         bucket.addFlowerPack(tulip_pack);
-        System.out.println(bucket);
 
-        System.out.println(tulip);
-        System.out.println(rose);
+        LinkedList<Item> items = new LinkedList<>();
+        items.add(tulip);
+        items.add(bucket);
+        items.add(rose);
+
+        PostDeliveryStrategy deliver = new PostDeliveryStrategy();
+        deliver.deliver(items);
     }
 }

@@ -103,7 +103,7 @@ public class FlowerBucket extends Item{
 
     @Override
     public String toString() {
-        String description = "Bucket: ";
+        String description = "Bucket(";
         if (flowerPacks == null || flowerPacks.isEmpty()){
             description += "no flowers";
         } else{
@@ -111,6 +111,6 @@ public class FlowerBucket extends Item{
             packs = packs.substring(1, packs.length()-1);
             description += packs;
         }
-        return description;
+        return description + ")";
     }
 }

@@ -9,7 +9,7 @@ public class PostDeliveryStrategy implements Delivery{
     public boolean deliver(LinkedList<Item> items) {
         System.out.println("Deliver by post:");
         for (Item deliver_item : items) {
-            System.out.println("- " + deliver_item);
+            System.out.println("- " + deliver_item.getDescription());
         }
         return true;
     }

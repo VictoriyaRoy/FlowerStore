@@ -17,6 +17,7 @@ public class FlowerBucket extends Item{
     public FlowerBucket() {
         super();
         this.flowerPacks = new HashSet<>();
+        updateDescription();
     }
 
     /**

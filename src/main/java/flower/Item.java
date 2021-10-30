@@ -4,7 +4,6 @@ public abstract class Item {
     String description;
 
     public Item() {
-        updateDescription();
     }
 
     public String getDescription() {

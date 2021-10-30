@@ -8,7 +8,7 @@ import java.util.Locale;
 /**
  * Represent a flower
  */
-@Getter @Setter
+@Getter
 public class Flower extends Item{
     private double price, sepalLength;
     private FlowerColor color;
@@ -20,6 +20,7 @@ public class Flower extends Item{
         this.price = price;
         this.color = color;
         this.type = type;
+        updateDescription();
     }
 
     public void setPrice(double price) {
@@ -30,11 +31,6 @@ public class Flower extends Item{
     @Override
     public double price() {
         return price;
-    }
-
-    public void setSepalLength(double sepalLength) {
-        assert (sepalLength > 0);
-        this.sepalLength = sepalLength;
     }
 
     @Override

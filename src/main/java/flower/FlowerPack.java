@@ -8,7 +8,7 @@ import java.util.Locale;
 /**
  * Represent a pack of some similar flowers
  */
-@Getter @Setter
+@Getter
 public class FlowerPack {
     private Flower flower;
     private int amount;

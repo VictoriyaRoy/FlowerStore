@@ -1,3 +1,5 @@
+package flower;
+
 import flower.Flower;
 import flower.FlowerColor;
 import flower.FlowerPack;
@@ -27,8 +29,6 @@ class FlowerPackTest {
     @Test
     void getColor() {
         assertEquals(FlowerColor.RED, pack.getColor());
-        rose.setColor(FlowerColor.PINK);
-        assertEquals(FlowerColor.PINK, pack.getColor());
     }
 
     @Test

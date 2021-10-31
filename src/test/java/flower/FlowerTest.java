@@ -1,3 +1,5 @@
+package flower;
+
 import flower.Flower;
 import flower.FlowerColor;
 import flower.FlowerType;
@@ -24,21 +26,15 @@ class FlowerTest {
     @Test
     void getSepalLength() {
         assertEquals(2.5, flower.getSepalLength());
-        flower.setSepalLength(5);
-        assertEquals(5, flower.getSepalLength());
     }
 
     @Test
     void getColor() {
         assertEquals(FlowerColor.RED, flower.getColor());
-        flower.setColor(FlowerColor.PINK);
-        assertEquals(FlowerColor.PINK, flower.getColor());
     }
 
     @Test
     void getType() {
         assertEquals(FlowerType.ROSE, flower.getType());
-        flower.setType(FlowerType.TULIP);
-        assertEquals(FlowerType.TULIP, flower.getType());
     }
 }

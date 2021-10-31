@@ -31,11 +31,6 @@ public class FlowerPack {
         return flower.getType();
     }
 
-    public void setAmount(int amount) {
-        assert (amount > 0);
-        this.amount = amount;
-    }
-
     @Override
     public String toString() {
         String str =  amount + " " + getColor() + " " + getType() + "s";

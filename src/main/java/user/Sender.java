@@ -1,5 +1,8 @@
 package user;
 
+import lombok.Getter;
+
+@Getter
 public class Sender implements User{
     private int id;
 

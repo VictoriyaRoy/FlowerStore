@@ -5,6 +5,9 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import payment.CreditCardPaymentStrategy;
 import payment.PayPalPaymentStrategy;
+import user.Receiver;
+import user.Sender;
+import user.User;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -36,6 +39,8 @@ class OrderTest {
         order.setPayment(new CreditCardPaymentStrategy());
         order.setDelivery(new PostDeliveryStrategy());
         assert order.processOrder();
+        order.removeItem(bucket);
+        assert !order.processOrder(); // empty item list
     }
 
     @Test
@@ -72,5 +77,22 @@ class OrderTest {
         assertInstanceOf(PostDeliveryStrategy.class, order.getDelivery());
         order.setDelivery(new DHLDeviveyStrategy());
         assertInstanceOf(DHLDeviveyStrategy.class, order.getDelivery());
+    }
+
+    @Test
+    void addUser() {
+        assert order.getUsers().isEmpty();
+        order.addUser(new Sender());
+        order.addUser(new Receiver());
+        assertEquals(2, order.getUsers().size());
+    }
+
+    @Test
+    void removeUser() {
+        User sender = new Sender();
+        order.addUser(sender);
+        assertEquals(1, order.getUsers().size());
+        order.removeUser(sender);
+        assert order.getUsers().isEmpty();
     }
 }
